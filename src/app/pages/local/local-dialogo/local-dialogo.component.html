@@ -1,0 +1,17 @@
+<div>
+    <mat-form-field>
+        <input matInput placeholder="Nombre del local" [(ngModel)]="local.nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Dirección" [(ngModel)]="local.direccion">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Comuna" [(ngModel)]="local.comuna">
+    </mat-form-field>
+
+</div>
+
+<button mat-raised-button color="primary"  (click)="operar()">Aceptar</button>
+<button mat-raised-button color="warn"  (click)="cerrar()">Cancelar</button>

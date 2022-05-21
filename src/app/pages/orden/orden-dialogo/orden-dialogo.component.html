@@ -1,0 +1,33 @@
+<div>
+
+    <mat-form-field>
+        <input matInput placeholder="Fecha" [(ngModel)]="orden.fecha">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="confirmacion" [(ngModel)]="orden.confirmacion">
+    </mat-form-field>
+
+    <mat-form-field>  
+        <mat-select placeholder="Producto" [(value)]="orden.idProducto" (selectionChange)="selected($event)" required>
+            <mat-option *ngFor="let e of (nombrep$ | async)" [value]="e.idProducto">{{ e.nombre +" $"+ e.precio }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>  
+        <mat-select placeholder="Cliente" [(value)]="orden.idCliente" (selectionChange)="selected($event)" required>
+            <mat-option *ngFor="let e of (nombrec$ | async)" [value]="e.idCliente">{{ e.nombre +" "+ e.apellido}}</mat-option>
+        </mat-select>
+
+      </mat-form-field>
+      <mat-form-field>  
+        <mat-select placeholder="Mesa" [(value)]="orden.idMesa" (selectionChange)="selected($event)" required>
+            <mat-option *ngFor="let e of (nombrem$ | async)" [value]="e.idMesa">{{ e.descripcion }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+</div>
+
+
+<button mat-raised-button color="primary"  (click)="operar()">Aceptar</button>
+<button mat-raised-button color="warn"  (click)="cerrar()">Cancelar</button>

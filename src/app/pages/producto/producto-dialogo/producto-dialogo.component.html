@@ -1,0 +1,31 @@
+<div>
+
+    <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="producto.nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Precio" [(ngModel)]="producto.precio">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Tiempo Preparacion" [(ngModel)]="producto.tiempoPreparacion">
+    </mat-form-field>
+
+
+
+    <!-- <mat-form-field>
+        <input matInput placeholder="valorTotalProducto" [(ngModel)]="producto.valorTotalProducto">
+    </mat-form-field> -->
+
+    <mat-form-field>  
+        <mat-select placeholder="Tipo Producto" [(value)]="producto.idTipo" (selectionChange)="selected($event)" required>
+            <mat-option *ngFor="let e of (descripcion$ | async)" [value]="e.idTipoProducto">{{ e.descripcion }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+</div>
+
+
+<button mat-raised-button color="primary"  (click)="operar()">Aceptar</button>
+<button mat-raised-button color="warn"  (click)="cerrar()">Cancelar</button>

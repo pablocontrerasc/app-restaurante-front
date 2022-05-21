@@ -1,0 +1,19 @@
+<mat-toolbar class="title-component" style="text-align: center !important; margin-left: auto !important; margin-right: auto !important;">Recuperar Contraseña</mat-toolbar>
+
+
+<div class="example-container"  *ngIf="route.children.length === 0">
+    <mat-form-field>
+        <input matInput type="email" placeholder="Tu email" required [(ngModel)]="email">
+    </mat-form-field>
+
+    <mat-progress-bar mode="determinate" [value]="porcentaje"></mat-progress-bar>
+
+    <br />
+
+    <button mat-raised-button style="width: 300px; text-align: center; margin-left: auto; margin-right: auto;" color="primary" (click)="enviar()" [disabled]="!email">Enviar correo</button>
+
+    <mat-toolbar *ngIf="mensaje">{{mensaje}}</mat-toolbar>
+    <mat-toolbar *ngIf="error">{{error}}</mat-toolbar>
+</div>
+
+<router-outlet *ngIf="route.children.length !== 0"></router-outlet>

@@ -1,0 +1,14 @@
+<div>
+    <mat-form-field>
+        <input matInput placeholder="capacidad" [(ngModel)]="mesa.capacidad">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Descripcion" [(ngModel)]="mesa.descripcion">
+    </mat-form-field>
+
+</div>
+
+
+<button mat-raised-button color="primary"  (click)="operar()">Aceptar</button>
+<button mat-raised-button color="warn"  (click)="cerrar()">Cancelar</button>
